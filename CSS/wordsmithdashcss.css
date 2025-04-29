@@ -1,11 +1,44 @@
-/*Initially set to hidden, revealed after play is clicked.*/
 #mainGameContainer{
     text-align: center;
+    width:66.66%;
     font-family:"Consolas";
+    display:grid;
+    background-color: lightgray;
+    margin:0 auto;
 }
+
+/*Initially set to hidden, changed to grid in JS after play is clicked.*/
 #secondDiv{
     display:none;
 }
+#letterReveal{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px;
+}
+.item{
+    opacity:0;/*initially hidden*/
+}
+
+.item.animate{
+    animation:fadeIn 1s forwards;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+/* Delays for each item */
+.item:nth-child(1) { animation-delay: 0s; }
+.item:nth-child(2) { animation-delay: 0.5s; }
+.item:nth-child(3) { animation-delay: 1s; }
+.item:nth-child(4) { animation-delay: 1.5s; }
+.item:nth-child(5) { animation-delay: 2s; }
+.item:nth-child(6) { animation-delay: 2.5s; }
+.item:nth-child(7) { animation-delay: 3s; }
+.item:nth-child(8) { animation-delay: 3.5s; }
+
+
 #firstDiv{
 
 }
