@@ -1,0 +1,4 @@
+/*Initially set to hidden, revealed after play is clicked.*/
+#secondDiv{
+    display:none;
+}
