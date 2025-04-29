@@ -1,4 +1,11 @@
 /*Initially set to hidden, revealed after play is clicked.*/
+#mainGameContainer{
+    text-align: center;
+    font-family:"Consolas";
+}
 #secondDiv{
     display:none;
+}
+#firstDiv{
+
 }
