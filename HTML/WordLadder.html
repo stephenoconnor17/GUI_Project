@@ -7,17 +7,16 @@
     <link rel="stylesheet" src="WordLadder.css">
 </head>
 <body>
-    <div class="game-container">
-
-
-
-
-
-
-
-
-
-
+   <div class="game-container">
+    <h1>Welcome to Word Ladder</h1>
+    <p>Start: Word: <span id="startWord"></span></p>
+    <p>End Word: <span id="endWord"></span></p>
+    <p>Current word: <span id="currentWord"></span></p>
+    <p>Lives: <span id="lives">3</span></p>
+    <input type="text" id="guessInput" maxlength="3" placeholder="Enter next Word">
+    <button onclick="submitGuess()">Submit</button>
+    <p id="message"></p>
+   </div> 
 
 </body>
 <script src="WordLadder.js"></script>
