@@ -2,16 +2,17 @@
 
 
 #mainGameContainer{
-    text-align: center;
-    width:66.66%;
     display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
     /*background-color: lightgray;*/
     margin:0 auto;
+    grid-gap:10px;
 }
 
-.background{
-    background: linear-gradient(to top, #a4e8b8, #1b4923);
-    height: 100%;
+#wordInput{
+    width:100%;
+    padding:20px;
+    font-size: 2em;
 }
 
 /*Initially set to hidden, changed to grid in JS after play is clicked.*/
@@ -25,8 +26,8 @@
     grid-template-rows: 50px;
 }
 
-
 .item{
+    font-size:2em;
     opacity:0;/*initially hidden*/
 }
 

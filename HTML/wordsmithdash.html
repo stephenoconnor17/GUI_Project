@@ -9,26 +9,36 @@
 </head>
 <body>
     <div class="background">
-    <div class="menu">
         <div id="firstDiv">
-            <h1><i>WordSmith Dash</i></h1>
-            <button onclick="revealLetters()">Play</button>
+            <div class="menu">
+                <h1><i>WordSmith Dash</i></h1>
+                <button class="menu-btn" onclick="revealLetters()">Play</button>
+            </div>
         </div>
         <div id="secondDiv">
-            <h1>Your letters are: </h1>
-            <div id="letterReveal">
-                <div class="item" id="item1"><p>1</p></div>
-                <div class="item" id="item2"><p>1</p></div>
-                <div class="item" id="item3"><p>1</p></div>
-                <div class="item" id="item4"><p>1</p></div>
-                <div class="item" id="item5"><p>1</p></div>
-                <div class="item" id="item6"><p>1</p></div>
-                <div class="item" id="item7"><p>1</p></div>
-                <div class="item" id="item8"><p>1</p></div>
+            <div id="mainGameContainer">
+                <div class="menu">
+                     <h1>Your letters are: </h1>
+                     <div id="letterReveal">
+                        <div class="item" id="item1"><p>hello</p></div>
+                        <div class="item" id="item2"><p>this should</p></div>
+                        <div class="item" id="item3"><p>be super hidden</p></div>
+                        <div class="item" id="item4"><p>if it is not,</p></div>
+                        <div class="item" id="item5"><p>I have failed my job</p></div>
+                        <div class="item" id="item6"><p>forgive me.</p></div>
+                        <div class="item" id="item7"><p>You fell victim to one of the classic blunders - the most famous of which is 'never get involved in a land war in Asia'</p></div>
+                        <div class="item" id="item8"><p>thank you.</p></div>
+                    </div>
+                </div>
+                <div class="menu">
+                    <input id="wordInput">
+                    <button class="menu-btn">Check</button>
+                </div>
+                <div class="menu">
+
+                </div>
             </div>
-            <button onclick = "restartAnimation()">CLICK</button>
         </div>
-    </div>
     </div>
 </body>
 <script src="../JavaScript/wordsmithdashjs.js"></script>
