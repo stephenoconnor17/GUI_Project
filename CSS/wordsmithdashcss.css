@@ -13,6 +13,7 @@
     width:100%;
     padding:20px;
     font-size: 2em;
+    font-weight: bold;
 }
 
 /*Initially set to hidden, changed to grid in JS after play is clicked.*/
@@ -31,7 +32,7 @@
     opacity:0;/*initially hidden*/
 }
 
-/*Following code that does have animation which has been sourced from chatGPT*/
+/*Following code that does have animation which has been sourced from CoPilot*/
 .item.animate{
     animation:fadeIn 1s forwards;
 }

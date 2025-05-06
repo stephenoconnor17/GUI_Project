@@ -37,3 +37,6 @@ function assignLetters(){
     }
 
 }
+
+//I got AI to generate these arrays because they are just words.
+
