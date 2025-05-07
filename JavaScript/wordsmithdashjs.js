@@ -55,26 +55,38 @@ function assignLetters(){
 
 
 async function isRealWord(word) {
+    if (word.length < 2) return false; // Exclude single-letter words
+
     const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
     if (!response.ok) return false; // If request fails (404, etc.), return false
     
     const data = await response.json();
-    return Array.isArray(data); // Valid words return an array
+    return Array.isArray(data) && data[0]?.meanings?.length > 0; // Ensure definitions exist
 }
+
+
 
 
 let userInputLetters = [];
 let score = 0;
-
+let tries = 5;
 //main game validation function.
 //get Input, push each character into a dynamic array.
 //make sure every character of the input is within the currentLetters array.
 //once it is found, make sure to pop out that character in case of repeats.
-function check(){
+async function check(){
+    alert("CLICK");
+    if(tries == 0){
+        tries = 5;
+        updateTries(tries);
+        return;
+    }
+
+    tries--;
+    updateTries(tries);
     userInputLetters.length = 0;
 
     let USERINPUT = document.getElementById("wordInput").value;
-    alert(USERINPUT);
 
     for(let i = 0; i < USERINPUT.length; i++){
         userInputLetters.push(USERINPUT.charAt(i));
@@ -90,7 +102,7 @@ function check(){
     }
 
     if(hasEachLetter){
-        if(isRealWord(USERINPUT)){
+        if(await isRealWord(USERINPUT)){
             document.getElementById("returnValidation").style.color = "green";
             document.getElementById("returnValidation2").style.color = "green";
 
@@ -114,8 +126,13 @@ function check(){
         document.getElementById("returnValidation").innerText = "That is not a word!";
         document.getElementById("returnValidation2").innerText = "No score!"
     }
+
 }
 
 function updateScore(score){
     document.getElementById("score").innerHTML = "-" + score + "-";
+}
+
+function updateTries(tries){
+    document.getElementById("tries").innerHTML = "-" + tries + "-";
 }
