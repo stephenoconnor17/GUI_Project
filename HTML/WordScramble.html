@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Word Scramble Game</title>
-  <link rel="stylesheet" href="WordScramble.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="game-container">
-    <h1>Welcome to Word Scramble</h1>
-    <p id="scrambled-word">Loading...</p>
-    <input type="text" id="user-input" placeholder="Guess the word" />
+    <h1> Word Scramble</h1>
+
+    <p class="label">Level: <span id="level">1</span></p>
+    <p class="label">Score: <span id="score">0</span></p>
+    <p class="label">Attempts left: <span id="attempts">3</span></p>
+
+    <div class="scramble-box">
+      <p id="scrambled-word">Loading...</p>
+    </div>
+
+    <input type="text" id="user-input" placeholder="Type your guess here..." />
     <button onclick="checkGuess()">Submit</button>
+
     <p id="message"></p>
-    <p>Score: <span id="score">0</span></p>
-    <p>Attempts left: <span id="attempts">3</span></p>
   </div>
 
   </body>
