@@ -63,5 +63,7 @@ function checkGuess() {
   }
 }
 
+window.onload = pickNewWord;
+
 
 
