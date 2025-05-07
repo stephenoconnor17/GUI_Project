@@ -1,4 +1,4 @@
-/* Global styles */
+/*Adam Casey*/
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom right, #fdfdfd, #f3f5f6);
+   background: linear-gradient(to top, #a4e8b8, #1b4923);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

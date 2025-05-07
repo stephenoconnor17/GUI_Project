@@ -1,5 +1,4 @@
-// Full Unscramble Game JavaScript Code with 100 Words per Level
-
+// Adam Casey
 const WordsbeingScrambled = {
   3: [
     'ace','act','add','age','aim','air','and','ant','any','ape','arc','arm','art','ash','ask','ate','bad','bag','ban','bar',
