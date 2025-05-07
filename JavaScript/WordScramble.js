@@ -1,6 +1,6 @@
 // Full Unscramble Game JavaScript Code with 100 Words per Level
 
-const wordsByLength = {
+const WordsbeingScrambled = {
   3: [
     'ace','act','add','age','aim','air','and','ant','any','ape','arc','arm','art','ash','ask','ate','bad','bag','ban','bar',
     'bat','bay','bed','bee','beg','bet','bid','big','bin','bit','boa','bob','bog','box','boy','bug','bun','bus','but','buy',
@@ -46,7 +46,7 @@ const wordsByLength = {
     'amplitude','analyzing','anecdotes','announced','anonymous','answering','apologize','appetizer','appraisal','appreciate','approval','arguments','assembling','attention','attitudes','authority','automatic','available','awakening','backwards',
     'bachelor','backpacks','ballerina','baseboard','baseball','basketful','bathrooms','beautiful','bedspread','beginning','benchmark','benefited','biography','blackmail','blackouts','blockhead','blueberry','bookstore','brainwash','breakfast',
     'breathless','briefcase','broadcast','broccoli','brutality','calculator','candidate','carefully','casualties','celebrate','cellphone','certainty','chairlift','chancellor','cheerful','childhood','cholesterol','cigarette','classroom','clearance'
-  ]
+  ]  // I asked chatGPT to give me 100 words. From letters containing 3 letters to 9 letters.
 };
 
 let currentLength = 3;
@@ -66,7 +66,7 @@ function shuffleWord(word) {
 }
 
 function getRandomWord(length) {
-  const words = wordsByLength[length];
+  const words = WordsbeingScrambled[length];
   return words[Math.floor(Math.random() * words.length)];
 }
 
@@ -79,7 +79,7 @@ function updateUI() {
 }
 
 function nextWord() {
-  const wordList = wordsByLength[currentLength];
+  const wordList = WordsbeingScrambled[currentLength];
   if (!wordList || wordList.length === 0) {
     console.error(`No words for length ${currentLength}`);
     return;
