@@ -1,3 +1,5 @@
+//By Malachy Lindner
+
 //Array of three letter words
 const threeLetterWords = [
   "ace", "act", "add", "age", "ago", "aid", "aim", "air", "and", "ant",
