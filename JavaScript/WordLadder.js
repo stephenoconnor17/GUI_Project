@@ -32,89 +32,68 @@ const threeLetterWords = [
 ];
 
 // Function to pick a random word
-function getRandomWord()
+function getrandomword()
 {
-  var index = Math.floor(Math.random() * threeLetterWords.length);
+  let index = Math.floor(Math.random() * threeLetterWords.length);
   return threeLetterWords[index];
 }
 
 // variables for the start and finsihing word
-var startWord = getRandomWord();
-var endWord = getRandomWord();
+let startingword = getrandomword();
+let finishingword = getrandomword();
 
-var currentWord = startWord;
-var lives = 3;
+let currentword = startingword;
+let lives = 3;
 
 // displaying the words and lives
-document.getElementById("startWord").textContent = startWord;
-document.getElementById("endWord").textContent = endWord;
-document.getElementById("currentWord").textContent = currentWord;
+document.getElementById("startWord").textContent = startingword;
+document.getElementById("endWord").textContent = finishingword;
+document.getElementById("currentWord").textContent = currentword;
 document.getElementById("lives").textContent = lives;
 
-//This function checks if the words are the same except for one letter
-function isOneLetterDifferent(word1, word2)
-{
-  var count = 0;
-
-  for(var i = 0; i < word1.length; i++)
-  {
-    if(word1[i] !== word2[i]) count++;
-  }
-  return count === 1;
-}
 
 // This function checks if if the inputted word is in the list
-function isValidWord(word)
+function isvalidword(word)
 {
   return threeLetterWords.includes(word);
 }
 
-function submitGuess()
+//function to submit guess which in turn also runs other functions if certain errors are made
+function submitguess()
 {
-  var input = document.getElementById("guessInput").value.toLowerCase();
+  var input = document.getElementById("guessInput").value;
   var message = document.getElementById("message");
 
-  // checks if word is the right length
-  if(input.length !== currentWord.length)
-  {
-    message.textContent = "Word must be " + currentWord.length + " Letters";
-    return;
-  }
-
-  //makes sure only one letter is changed
-  if(!isOneLetterDifferent(currentWord, input))
-  {
-    message.textContent = "Change only one letter!";
-    return;
-  }
 
   //makes sure its a valid word
-  if(!isValidWord(input))
+  if(!isvalidword(input))
   {
     lives--;
     document.getElementById("lives").textContent = lives;
     message.textContent = "Not a Valid Word. Lives Left: " + lives;
+    
     // if the lives reach zero its game over
+
     if (lives === 0)
     {
       message.textContent = "Game Over";
-      disableInput();
+      disableinput();
     }
     return;
   }
   //updates the word if the change is valid
   currentWord = input;
-  document.getElementById("currentWord").textContent = currentWord;
+  document.getElementById("currentWord").textContent = currentword;
   message.textContent = "Well Done";
   // checks if start word and end word are the same
-  if (currentWord === endWord)
+  if (currentword === finishingword)
   {
     message.textContent = "Congrats. You reached the end word!"
   }
 }
 
 //this function disables any user input
-function disableInput()
+function disableinput()
 {
   document.getElementById("guessInput").disabled = true;
 }
