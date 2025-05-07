@@ -9,6 +9,21 @@
     grid-gap:10px;
 }
 
+#gameOver{
+    display:none;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin:0 auto;
+    grid-gap:10px;
+}
+
+.gameOverMenu{
+    grid-column: span 3;
+}
+
+#gameOverTitle{
+    font-size: 2em;
+}
+
 #smallPrint{
     color:white;
     font-size: .8em;
@@ -40,6 +55,7 @@
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 50px;
+    margin-top: 20px;
 }
 
 #home{

@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WordSmith Dash</title>
+    <!--My CSS is in wordsmithdashcss.css, Jack's Overall CSS is in style.css-->
     <link rel="stylesheet" href="../CSS/wordsmithdashcss.css">
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
     <div class="background">
+        <!--first div is the opening screen, Once play is clicked, moved to main game screen -->
         <div id="firstDiv">
+            <div id="title">
+                <h1><i>WordSmith</i></h1>
+            </div>
             <div class="menu">
-                <h1><i>WordSmith Dash</i></h1>
                 <button class="menu-btn" onclick="revealLetters()">Play</button>
             </div>
         </div>
@@ -22,7 +26,8 @@
                 </div>
                 <div class="menu">
                      <h1>Your letters are: </h1>
-                     <div id="letterReveal" style="margin-top: 20px;">
+                     <div id="letterReveal">
+                        <!--Below are where each letter is given a place to be displayed.-->
                         <div class="item" id="item1"><p>hello</p></div>
                         <div class="item" id="item2"><p>this should</p></div>
                         <div class="item" id="item3"><p>be super hidden</p></div>
@@ -32,6 +37,8 @@
                         <div class="item" id="item7"><p>You fell victim to one of the classic blunders - the most famous of which is 'never get involved in a land war in Asia'</p></div>
                         <div class="item" id="item8"><p>thank you.</p></div>
                     </div>
+                    <p>Tries:</p>
+                    <p id="tries">-5-</p>
                 </div>
                 <div class="menu">
                     <input id="wordInput" maxlength="8" placeholder="Guess Here">
@@ -50,8 +57,26 @@
                     <p id="smallPrint">Each letter in word is +50 score</p>
                     <p id="smallPrint">Up to 10 rounds!</p>
                 </div>
+                <div>
+                    <p id="smallPrint">5 Tries to make words with the letters</p>
+                    <p id="smallPrint">After 5 tries, you move to the next round!</p>
+                </div>
                 <div id="home">
-                    <a href="index.html"><button class="menu-btn"><-- Home</button></a>
+                    <a href="index.html"><button class="menu-btn"><<  Home</button></a>
+                </div>
+            </div>
+            <!--We only move to gameOver once we reach finish round 5.-->
+            <div id="gameOver">
+                <div id="title">
+                    <h1><i>WordSmith</i></h1>
+                </div>
+                <div class="menu gameOverMenu">
+                    <h1 id="gameOverTitle"><i>Game Over</i></h1>
+                    <button class="menu-btn" onclick="revealLetters()">Play Again</button>
+                    <h2 id="scoreDisplay"></h2>
+                </div>
+                <div id="home">
+                    <a href="index.html"><button class="menu-btn"><<  Home</button></a>
                 </div>
             </div>
         </div>
@@ -59,3 +84,4 @@
 </body>
 <script src="../JavaScript/wordsmithdashjs.js"></script>
 </html>
+<!--By Stephen O'Connor-->
