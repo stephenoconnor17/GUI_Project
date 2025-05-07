@@ -1,62 +1,19 @@
-/* Apply a soft light gradient to the background */
 body {
   margin: 0;
+  padding: 0;
   height: 100vh;
-  background: linear-gradient(to bottom right, #f3f7f3, #eef5f2);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right, #fdfdfd, #f3f5f6);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Style the main white game box */
 .container {
   background-color: white;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 320px;
-}
-
-/* Game level, score, lives */
-.container div {
-  margin: 8px 0;
-  font-size: 18px;
-}
-
-/* Highlighted word (e.g. 'tac') */
-.word {
-  font-size: 28px;
-  font-weight: bold;
-  color: #009688; /* teal-like color */
-  margin: 20px 0;
-}
-
-/* Input styling */
-input[type="text"] {
-  padding: 10px;
-  width: 100%;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-}
-
-/* Button styles */
-button {
-  background-color: #6a1b9a;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.2s ease;
-}
-
-button:hover {
-  background-color: #4a148c;
 }
