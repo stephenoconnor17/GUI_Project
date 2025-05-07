@@ -1,3 +1,4 @@
+/* Global styles */
 body {
   margin: 0;
   padding: 0;
@@ -9,11 +10,55 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Card container */
 .container {
   background-color: white;
-  padding: 40px;
+  padding: 40px 30px;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 320px;
+}
+
+/* Status text (Level, Score, Lives) */
+.status {
+  font-size: 18px;
+  color: #333;
+  margin: 6px 0;
+}
+
+/* Word to guess */
+.word {
+  font-size: 28px;
+  font-weight: bold;
+  color: #059669; /* teal */
+  margin: 20px 0;
+}
+
+/* Input field */
+input[type="text"] {
+  padding: 10px 14px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  background-color: #6b21a8;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #581c87;
 }
