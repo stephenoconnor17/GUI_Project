@@ -68,6 +68,7 @@ async function isRealWord(word) {
 
 
 let userInputLetters = [];
+let pastUserInputs = [];
 let score = 0;
 let tries = 5;
 //main game validation function.
@@ -76,17 +77,29 @@ let tries = 5;
 //once it is found, make sure to pop out that character in case of repeats.
 async function check(){
     alert("CLICK");
+    
     if(tries == 0){
         tries = 5;
-        updateTries(tries);
+        await updateTries(tries);
         return;
     }
 
     tries--;
     updateTries(tries);
+    
     userInputLetters.length = 0;
 
     let USERINPUT = document.getElementById("wordInput").value;
+    if(pastUserInputs.includes(USERINPUT)){
+        document.getElementById("returnValidation").style.color = "red";
+        document.getElementById("returnValidation2").style.color = "red";
+
+        document.getElementById("returnValidation").innerText = "Has already been guessed";
+        document.getElementById("returnValidation2").innerText = "No score!"
+        return;
+    }else{
+        pastUserInputs.push(USERINPUT);
+    }
 
     for(let i = 0; i < USERINPUT.length; i++){
         userInputLetters.push(USERINPUT.charAt(i));
@@ -100,6 +113,7 @@ async function check(){
             break;
         }
     }
+
 
     if(hasEachLetter){
         if(await isRealWord(USERINPUT)){
@@ -133,6 +147,6 @@ function updateScore(score){
     document.getElementById("score").innerHTML = "-" + score + "-";
 }
 
-function updateTries(tries){
+async function updateTries(tries){
     document.getElementById("tries").innerHTML = "-" + tries + "-";
 }
