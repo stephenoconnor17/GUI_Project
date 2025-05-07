@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="background">
    <div class="game-container">
-    <h1>Welcome to Word Ladder</h1>
+    <div class="menu">
+    <h1 class="title">Welcome to Word Ladder</h1>
 
     <!-- seperate ids for each of the elements of the game -->
+
     <p>Start: Word: <span id="startWord"></span></p>
     <p>End Word: <span id="endWord"></span></p>
     <p>Current word: <span id="currentWord"></span></p>
@@ -23,10 +26,12 @@
     <!-- message id is used to display messages based on the user input -->
     <p id="message"></p>
    </div> 
-    <div id="home">
-        <a href="index.html"><button class="menu-btn">Home</button> </a>
-    </div>
-       
+
+   <div id="home">
+    <a href="index.html"><button class="menu-btn">Home</button> </a>
+   </div>
+   </div>
+
 
 </body>
 <script src="WordLadder.js"></script>
