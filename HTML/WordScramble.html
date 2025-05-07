@@ -10,15 +10,15 @@
    <div class="game-container">
 
   <p id="level">Level: 1</p>
-  <p id="score">Score: 0</p>        
+  <p id="score">Score: 0</p>   <!-- The current level , score , lives left -->     
   <p id="lives">Lives: 3</p>
   <p id="scrambledWord">Loading...</p>
 
-  <input type="text" id="inputWord" placeholder="Your guess" />
-  <button onclick="submitGuess()">Submit</button>
-     <div id="home">
+  <input type="text" id="inputWord" placeholder="Your guess" />  <!-- A text box where the player types their guessed word-->
+  <button onclick="submitGuess()">Submit</button>   <!-- a button to submit there guess-->
+     <div id="home">  <!-- A message area to show feedback like Correct  or Wrong-->
   <p id="message"></p>
-  <button id="restartBtn" onclick="startGame()">Restart Game</button>
+  <button id="restartBtn" onclick="startGame()">Restart Game</button> <!-- A restart game button-->
 
   <script src="WordScramble.js"></script>
      </div> 
