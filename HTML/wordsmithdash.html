@@ -19,7 +19,7 @@
             <div id="mainGameContainer">
                 <div class="menu">
                      <h1>Your letters are: </h1>
-                     <div id="letterReveal">
+                     <div id="letterReveal" style="margin-top: 20px;">
                         <div class="item" id="item1"><p>hello</p></div>
                         <div class="item" id="item2"><p>this should</p></div>
                         <div class="item" id="item3"><p>be super hidden</p></div>
@@ -31,11 +31,15 @@
                     </div>
                 </div>
                 <div class="menu">
-                    <input id="wordInput">
-                    <button class="menu-btn">Check</button>
+                    <input id="wordInput" maxlength="8" placeholder="Guess Here">
+                    <button class="menu-btn" onclick="check()">Check</button>
                 </div>
                 <div class="menu">
-
+                    <h1>Round:</h1>
+                    <h1 id="round">-0-</h1>
+                    <h1>Score</h1>
+                    <h1 id="score">-0-</h1>
+                    <button class="menu-btn" onclick="restartAnimation()">Next Round</button>
                 </div>
             </div>
         </div>

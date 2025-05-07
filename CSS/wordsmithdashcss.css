@@ -16,6 +16,11 @@
     font-weight: bold;
 }
 
+#wordInput::placeholder{
+    font-style:italic;
+    font-size:.8em;
+}
+
 /*Initially set to hidden, changed to grid in JS after play is clicked.*/
 #secondDiv{
     display:none;
