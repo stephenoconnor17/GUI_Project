@@ -55,11 +55,12 @@ let correctAnswers = 0;
 let lives = 3;
 let currentWord = '';
 let scrambled = '';
-
+//These are my variables that are helping the game run 
 function shuffleWord(word) {
   let arr = word.split('');
   for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(Math.random() * (i + 1));  // I had to ask chatgpt how to shuffle a word once i had the word and this is the formula they gave me.
+                                                    // i followed up on google just to see if it was the best method and it was for me
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr.join('');
@@ -67,22 +68,22 @@ function shuffleWord(word) {
 
 function getRandomWord(length) {
   const words = WordsbeingScrambled[length];
-  return words[Math.floor(Math.random() * words.length)];
+  return words[Math.floor(Math.random() * words.length)]; //this just filters the words from the number that the player is on and and returns a random word from my list.
 }
 
 function updateUI() {
   document.getElementById('level').innerText = `Level: ${currentLength - 2}`;
   document.getElementById('score').innerText = `Score: ${score}`;
   document.getElementById('lives').innerText = `Lives: ${lives}`;
-  document.getElementById('scrambledWord').innerText = scrambled || '';
+  document.getElementById('scrambledWord').innerText = scrambled || ''; ////Updates the Html elements to show current level score lives scrambled word 
+                                                                        //and clears any previous messages.
   document.getElementById('inputWord').value = '';
 }
 
 function nextWord() {
   const wordList = WordsbeingScrambled[currentLength];
   if (!wordList || wordList.length === 0) {
-    console.error(`No words for length ${currentLength}`);
-    return;
+    console.error(`No words for length ${currentLength}`); 
   }
 
   currentWord = getRandomWord(currentLength);
@@ -97,11 +98,11 @@ function nextWord() {
 }
 
 function submitGuess() {
-  const guess = document.getElementById('inputWord').value.trim().toLowerCase();
+  const guess = document.getElementById('inputWord').value.trim().toLowerCase(); //Gets the players guess from the input box , Makes sure the guess is not empty, Converts it to lowercase for easier checking.
   if (!guess || !currentWord) return;
 
   if (guess === currentWord) {
-    score += 100;
+    score += 100;                    // adds 100 points , counts it as a correct answer , Every 3 correct answers make the words longer
     correctAnswers++;
 
     if (correctAnswers % 3 === 0 && currentLength < 9) {
@@ -109,7 +110,7 @@ function submitGuess() {
     }
 
     if (currentLength > 9) {
-      document.getElementById('message').innerText = " Congratulations! You beat the game!";
+      document.getElementById('message').innerText = " Congratulations! You beat the game!"; // If the word length goes beyond 9 the game ends , 
       document.getElementById('scrambledWord').innerText = '';
       return;
     }
@@ -119,7 +120,7 @@ function submitGuess() {
   } else {
     lives--;
     if (lives <= 0) {
-      document.getElementById('message').innerText = ` Game Over! The word was "${currentWord}".`;
+      document.getElementById('message').innerText = ` Game Over! The word was "${currentWord}".`; //if the guess is wrong , you loose a life , if lives hit 0 the games over , if you still have lives try the new word , 
       document.getElementById('scrambledWord').innerText = '';
       currentWord = '';
     } else {
@@ -136,8 +137,8 @@ function startGame() {
   score = 0;
   correctAnswers = 0;
   lives = 3;
-  document.getElementById('message').innerText = '';
+  document.getElementById('message').innerText = '';  //picks a random word and scrmables it , Ensures the scrambled word is actually different from the original , Clears the input box and updates the screen.
   nextWord();
 }
 
-window.onload = startGame;
+window.onload = startGame;   // i actually had to use chatgpt for this as i had nearly everything and had no idea why my game was running and i hadnt used a start button but this makes it so when you open up the browser it automatically starts for you.
