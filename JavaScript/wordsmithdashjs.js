@@ -56,21 +56,25 @@ function assignLetters(){
 
 async function isRealWord(word) {
     const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-    return response.ok; // Returns true if the word exists
+    if (!response.ok) return false; // If request fails (404, etc.), return false
+    
+    const data = await response.json();
+    return Array.isArray(data); // Valid words return an array
 }
 
-let userInputLetters = [];
 
+let userInputLetters = [];
+let score = 0;
 
 //main game validation function.
 //get Input, push each character into a dynamic array.
 //make sure every character of the input is within the currentLetters array.
 //once it is found, make sure to pop out that character in case of repeats.
 function check(){
-    alert(currentLetters);
     userInputLetters.length = 0;
 
     let USERINPUT = document.getElementById("wordInput").value;
+    alert(USERINPUT);
 
     for(let i = 0; i < USERINPUT.length; i++){
         userInputLetters.push(USERINPUT.charAt(i));
@@ -87,15 +91,31 @@ function check(){
 
     if(hasEachLetter){
         if(isRealWord(USERINPUT)){
-            alert("THIS IS A REAL WORD!")
+            document.getElementById("returnValidation").style.color = "green";
+            document.getElementById("returnValidation2").style.color = "green";
+
+            document.getElementById("returnValidation").innerText = "That is a word!";
+
+            score += (userInputLetters.length * 50);
+            updateScore(score);
+
+            document.getElementById("returnValidation2").innerText = "+" + (userInputLetters.length * 50) + " score!"
+        }else{
+            document.getElementById("returnValidation").style.color = "red";
+            document.getElementById("returnValidation2").style.color = "red";
+
+            document.getElementById("returnValidation").innerText = "That is not a word!";
+            document.getElementById("returnValidation2").innerText = "No score!"
         }
     }else{
-        alert("DOESN'T HAVE EACH LETTER");
+        document.getElementById("returnValidation").style.color = "red";
+        document.getElementById("returnValidation2").style.color = "red";
+
+        document.getElementById("returnValidation").innerText = "That is not a word!";
+        document.getElementById("returnValidation2").innerText = "No score!"
     }
-
-
 }
-//this function is to compare the input to the letters given, which if each letter of the input is valid,
-//then use isRealWord.
 
-
+function updateScore(score){
+    document.getElementById("score").innerHTML = "-" + score + "-";
+}

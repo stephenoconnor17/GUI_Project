@@ -9,11 +9,21 @@
     grid-gap:10px;
 }
 
+#smallPrint{
+    color:white;
+    font-size: .8em;
+    text-align: center;
+}
+
 #wordInput{
     width:100%;
     padding:20px;
     font-size: 2em;
     font-weight: bold;
+}
+
+#returnValidation, #returnValidation2{
+    font-size:1.4em;
 }
 
 #wordInput::placeholder{
