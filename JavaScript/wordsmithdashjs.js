@@ -59,7 +59,6 @@ function restartAnimation() {
     }
 }
 
-let currentLetters = ["","","","","","","",""];
 
 /*
 function assignLetters(){
@@ -75,7 +74,15 @@ function assignLetters(){
     }
 
 }
+
+My test casing is my updating of this function
+I was playing and noticed at times I would get no vowels what so ever
+which makes it practicallty impossible to make any word
+so I searched up regular distributions for vowels in word games
+and CoPilot said its commonly around the 40% to 45% likelihood of being able to draw a vowel in these type of word games. 
 */
+
+let currentLetters = ["","","","","","","",""];
 
 function assignLetters(){
     //Following the fact that vowels are super important for making words
@@ -85,7 +92,8 @@ function assignLetters(){
     let conletters = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"];
     let vowelletters = ["a","e","i","o","u"];
     let item = "item";
-    //choose vowel or consonant. We will do vowels at 40% and consonants at 60%
+
+    //choose vowel or consonant here. We will do vowels at 40% and consonants at 60%
     for( let i = 0; i < 8; i++){
         let chooseLetterType = Math.floor(Math.random() * 100) + 1;
         if(chooseLetterType <= 40){
@@ -227,3 +235,5 @@ function updateScore(score){
 async function updateTries(tries){
     document.getElementById("tries").innerHTML = "-" + tries + "-";
 }
+
+//by Stephen O'Connor
