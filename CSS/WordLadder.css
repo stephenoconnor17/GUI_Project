@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px;
+    width: 300px;
+    text-align: center;
+}
